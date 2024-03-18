@@ -11,7 +11,7 @@ http.listen(PORT, () => {
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+    res.sendFile(__dirname + '/index.html')
 })
 
 // Socket 
@@ -25,4 +25,3 @@ io.on('connection', (socket) => {
 
 })
 
-module.exports=app
